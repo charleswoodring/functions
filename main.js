@@ -30,13 +30,66 @@ For numbers which are multiples of both five and seven print "ChickenMonkey".
 /*
 BATTLEOFTHEBANDS
 */
-let bandNumber = 1 //let instead of const because its value will change
+// let bandNumber = 1 //let instead of const because its value will change
 
-const takeNumber = function (bandName) {
-console.log(`${bandNumber}. ${bandName}`)
-bandNumber = bandNumber + 1
+// const takeNumber = function (bandName) {
+// console.log(`${bandNumber}. ${bandName}`)
+// bandNumber = bandNumber + 1
+// }
+// takeNumber("Galactic Scum")
+// // console.log(scum)  // This should print "1. Galactic Scum" in the console
+// takeNumber("Underdogs")
+// // console.log(under)  // This should print "2. Underdogs" in the console
+//
+/*
+COOKOUT
+*/
+const hamburger = {
+	name: 'Hamburger',
+	type: 'beef',
+	cooked: false,
 }
-takeNumber("Galactic Scum")
-// console.log(scum)  // This should print "1. Galactic Scum" in the console
-takeNumber("Underdogs")
-// console.log(under)  // This should print "2. Underdogs" in the console
+const zucchini = {
+	name: 'Zucchini',
+	type: 'vegetable',
+	cooked: false,
+}
+const chickenBreast = {
+	name: 'Chicken Breast',
+	type: 'chicken',
+	cooked: false,
+}
+const corn = {
+	name: 'Corn',
+	type: 'vegetable',
+	cooked: false,
+}
+const steak = {
+	name: 'Steak',
+	type: 'beef',
+	cooked: false,
+}
+// An array that is grouping the objects together.
+const rawfoods = [hamburger, zucchini, chickenBreast, corn, steak];
+
+// display table of uncooked foods
+console.table(rawfoods)
+
+// An empty array that will store the objects after the `grill()` function cooks the food.
+const cookedFood = [];
+
+// the instructions for the grill funtion to perform when called
+//pass argument currentObject (each food) to the grill function one at a time
+function grill (currentObject) {
+    // Modify the food so that it is cooked
+    currentObject.cooked = true;
+    // Put the cooked food into the appropriate array
+    cookedFood.push(currentObject);
+};
+
+//call or invoke the grill function
+rawfoods.forEach(item => { //array foods foreach food
+    grill(item)
+});
+// display table of cooked foods
+console.table(cookedFood)
