@@ -30,17 +30,13 @@ For numbers which are multiples of both five and seven print "ChickenMonkey".
 /*
 BATTLEOFTHEBANDS
 */
-let bandNumber = 1
+let bandNumber = 1 //let instead of const because its value will change
 
-const takeNumber = function () {
-    /*
-        Write your awesome code here. See comments
-        below for what should be returned.
-    */
+const takeNumber = function (bandName) {
+console.log(`${bandNumber}. ${bandName}`)
+bandNumber = bandNumber + 1
 }
-
-const scum = takeNumber("Galactic Scum")
-console.log(scum)  // This should print "1. Galactic Scum" in the console
-
-const under = takeNumber("Underdogs")
-console.log(under)  // This should print "2. Underdogs" in the console
+takeNumber("Galactic Scum")
+// console.log(scum)  // This should print "1. Galactic Scum" in the console
+takeNumber("Underdogs")
+// console.log(under)  // This should print "2. Underdogs" in the console
